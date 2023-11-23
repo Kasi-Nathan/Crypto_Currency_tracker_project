@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tether Price Chart</title>
+	<link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>Tether Chart</h1>
+    <p>Tether is a stablecoin that is pegged to the value of the US dollar. It was launched in 2014 and is designed to provide stability to the cryptocurrency market. Each Tether token is backed by a reserve of traditional currency, which is held by Tether Limited, the company behind the cryptocurrency. Tether is widely used as a way to move funds between different cryptocurrency exchanges quickly and without the need for traditional banking services.</p>
+    <p>For more information about Tether, visit the official website at <a href="https://tether.to/">https://tether.to/</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "COINBASE:USDT-USD",
+        "interval": "5",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1D",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

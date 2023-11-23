@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ethereum Price Chart</title>
+	<link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>Ethereum Chart</h1>
+    <p>Ethereum is an open-source, blockchain-based platform that enables developers to build decentralized applications (dApps) on top of it. It was launched in 2015 and is currently the second-largest cryptocurrency by market capitalization after Bitcoin. Ethereum's cryptocurrency is called Ether (ETH), and it is used to pay for transaction fees and computational services on the Ethereum network.</p>
+    <p>For more information about Ethereum, visit the official website at <a href="https://ethereum.org/">https://ethereum.org/</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "COINBASE:ETHUSD",
+        "interval": "5",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1D",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frax Price Chart</title>
+    <link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>Frax Chart</h1>
+    <p>Frax (FRAX) is a decentralized stablecoin that is algorithmic, scalable, and targeted at reducing volatility. It is fully backed by a combination of crypto assets and US dollars, and its price is stabilized through an on-chain monetary policy.</p>
+    <p>For more information about Frax, visit the official website at <a href="https://frax.finance/">https://frax.finance/</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "COINBASE:FRAXUSD",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1M",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

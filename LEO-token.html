@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LEO Token Price Chart</title>
+    <link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>LEO Token Chart</h1>
+    <p>The LEO Token is a utility token issued by Bitfinex, one of the largest cryptocurrency exchanges in the world. It is designed to provide users with a range of benefits, including reduced trading fees, access to exclusive trading tools, and other perks. The LEO Token is based on the Ethereum blockchain and is ERC20 compliant.</p>
+    <p>For more information about LEO Token, visit the official website at <a href="https://www.bitfinex.com/leo">https://www.bitfinex.com/leo</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "BITFINEX:LEOUSD",
+        "interval": "5",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1D",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

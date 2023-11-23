@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TrueUSD Price Chart</title>
+    <link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>TrueUSD Chart</h1>
+    <p>TrueUSD (TUSD) is a stablecoin that is designed to maintain a 1:1 peg with the US dollar. It is issued by the TrustToken platform and is backed by US dollars held in escrow accounts. TUSD is designed to provide traders and investors with a stable and reliable digital asset that can be used for trading, remittances, and other purposes.</p>
+    <p>For more information about TrueUSD, visit the official website at <a href="https://www.trusttoken.com/trueusd">https://www.trusttoken.com/trueusd</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "COINBASE:TUSDUSD",
+        "interval": "5",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1D",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

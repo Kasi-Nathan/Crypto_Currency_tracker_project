@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cryptocurrency Tracker</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Cryptocurrency Tracker</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Cryptocurrency</th>
+				<th>Price</th>
+				<th>24h % Change</th>
+				<th>Market Cap</th>
+			</tr>
+		</thead>
+		<tbody id="cryptocurrency-table">
+		</tbody>
+	</table>
+
+	<script>
+		// Fetch data from CoinGecko API
+		fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false")
+		.then(response => response.json())
+		.then(data => {
+			const tableBody = document.getElementById("cryptocurrency-table");
+
+			// Loop through the data and create a row for each cryptocurrency
+			data.forEach(cryptocurrency => {
+				const row = document.createElement("tr");
+				row.innerHTML = `
+					<td><a href="${cryptocurrency.id}.html">${cryptocurrency.name}</a></td>
+					<td>$${cryptocurrency.current_price}</td>
+					<td>${cryptocurrency.price_change_percentage_24h}%</td>
+					<td>$${cryptocurrency.market_cap}</td>
+				`;
+
+				tableBody.appendChild(row);
+			});
+		})
+		.catch(error => console.error(error));
+	</script>
+</body>
+</html>

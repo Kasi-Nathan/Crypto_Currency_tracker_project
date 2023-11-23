@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApeCoin Price Chart</title>
+    <link rel="stylesheet" href="crypto.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <h1>ApeCoin Chart</h1>
+    <p>ApeCoin is a decentralized cryptocurrency that runs on the Binance Smart Chain network. It was created as a community-driven project and is designed to be used as a medium of exchange, a store of value, and a way to participate in community governance.</p>
+    <p>For more information about ApeCoin, visit the official website at <a href="https://www.apecoin.dev/">https://www.apecoin.dev/</a>.</p>
+    <div id="chart"></div>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "BINANCE:APEUSDT",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "withdateranges": true,
+        "range": "1M",
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "save_image": false,
+        "container_id": "chart"
+      });
+    </script>
+  </body>
+</html>

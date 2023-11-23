@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shiba Inu Chart</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<h1>Shiba Inu Chart</h1>
+	<canvas id="shib-chart"></canvas>
+	<script>
+		// Fetch data from the Binance API
+		fetch("https://api.binance.com/api/v3/klines?symbol=SHIBUSDT&interval=1h&limit=24")
+		.then(response => response.json())
+		.then(data => {
+			const prices = [];
+			const timestamps = [];
+
+			// Loop through the data and extract the price and timestamp
+			data.forEach(candle => {
+				prices.push(parseFloat(candle[4]));
+				timestamps.push(new Date(candle[0]));
+			});
+
+			// Create the chart
+			const shibChart = new Chart(document.getElementById("shib-chart"), {
+				type: 'candlestick',
+				data: {
+					datasets: [{
+						label: 'SHIB-USD',
+						data: prices.map((price, index) => {
+							return {
+								t: timestamps[index],
+								o: parseFloat(data[index][1]),
+								h: parseFloat(data[index][2]),
+								l: parseFloat(data[index][3]),
+								c: price
+							}
+						}),
+						borderColor: 'rgb(255, 99, 132)',
+						backgroundColor: 'rgba(255, 99, 132, 0.2)',
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						xAxes: [{
+							type: 'time',
+							time: {
+								unit: 'hour'
+							},
+							scaleLabel: {
+								display: true,
+								labelString: 'Time'
+							}
+						}],
+						yAxes: [{
+							scaleLabel: {
+								display: true,
+								labelString: 'Price (USD)'
+							}
+						}]
+					}
+				}
+			});
+		})
+		.catch(error => console.error(error));
+	</script>
+</body>
+</html>
